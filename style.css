@@ -317,7 +317,7 @@ line-height: 1.6;
   perspective: 1000px;
 }
 
-.services h2 {
+.services h2, .contact-heading, .testi-heading {
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 1rem;
@@ -328,7 +328,7 @@ line-height: 1.6;
   text-shadow: 0 0 20px rgba(96, 165, 250, 0.3);
 }
 
-.services-subtitle {
+.services-subtitle, .contact-subtitle, .testi-subtitle {
   text-align: center;
   color: #94a3b8;
   font-size: 1.2rem;
@@ -547,7 +547,7 @@ footer ul {
 .social-icons a {
     font-size: 20px;
     margin: 0 10px;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .social-icons a:hover {
@@ -566,7 +566,9 @@ footer ul {
 /*         margin-top: 105px; */
         display: grid;
         place-items: center;
-        height: 100vh;
+        padding-top: 105px;
+      
+        /* height: 100vh; */
     }
 
     .section-header {
@@ -589,11 +591,12 @@ footer ul {
         max-width: 1000px;
         padding: 0 15px 50px;
         margin: 0 auto 80px auto;
+        
     }
 
     .single-item {
-        background: #fff;
-        color: #111;
+      background: linear-gradient(45deg, var(--primary-color), var(--tertiary-color));
+      color: #fff;
         padding: 15px;
         margin: 50px 15px;
     }
@@ -611,7 +614,7 @@ footer ul {
         height: 200px;
         width: 200px;
         border-radius: 50%;
-        border: 7px solid blueviolet;
+        border: 7px solid var(--tertiary-color);
     }
 
     .content {
@@ -625,14 +628,74 @@ footer ul {
     .content p span {
         font-size: 48px;
         margin-right: 20px;
-        color: blueviolet;
+        color: var(--tertiary-color);
     }
 
     .socials i {
         margin-right: 25px;
+        color: #fff;
     }
     .carousel-control-next-icon,
     .carousel-control-prev-icon {
-        background-color: blueviolet;
+        background-color: var(--tertiary-color);
     }
 
+    .contact {
+        background: var(--primary-color); 
+        color: white;
+        padding-top: 105px;
+
+    }
+    
+    .contact h2 {
+        font-size: 2rem;
+        font-weight: bold;
+        text-align: center;
+        color: white;
+        margin-bottom: 30px;
+    }
+    
+    .contact-form {
+      background: linear-gradient(45deg, var(--tertiary-color), var(--primary-color));
+      padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .contact-form label {
+        font-weight: bold;
+        color: var(--primary-color);
+    }
+    
+    .contact-form .form-control {
+        border-radius: 5px;
+        border: 2px solid #ddd;
+        transition: 0.3s;
+    }
+    
+    .contact-form .form-control:hover,
+    .contact-form .form-control:focus {
+        border-color: var(--primary-color);
+        box-shadow: 0 0 10px rgba(230, 0, 127, 0.3);
+    }
+    
+    .contact-form .btn-primary {
+        background-color: var(--primary-color);
+        border: none;
+        padding: 10px 20px;
+        font-size: 1.1rem;
+        border-radius: 5px;
+        transition: 0.3s;
+    }
+    
+    .contact-form .btn-primary:hover {
+        background-color: var(--tertiary-color);
+        transform: scale(1.05);
+    }
+    
+    @media (max-width: 768px) {
+        .contact-form {
+            padding: 20px;
+        }
+    }
+    
