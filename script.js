@@ -341,3 +341,30 @@ function generateCarouselItems() {
 
 generateCarouselItems();
  
+
+gsap.to('.footer .waves .wave1', {
+  backgroundPositionX: "1000px", // Moves the background image
+  duration: 4,
+  repeat: -1,
+  ease: "linear"
+});
+
+gsap.to('.footer .waves .wave2', {
+  backgroundPositionX: "-1000px", // Moves the background image
+  duration: 4,
+  repeat: -1,
+  ease: "linear"
+});
+
+gsap.to('.footer .waves .wave3', {
+  backgroundPositionX: "-1000px", // Moves the background image
+  duration: 3,
+  repeat: -1,
+  ease: "linear"
+});
+gsap.to('.footer .waves .wave4', {
+  backgroundPositionX: "-1000px", // Moves the background image
+  duration: 3,
+  repeat: -1,
+  ease: "linear"
+});
