@@ -1,0 +1,32 @@
+:root{
+    --primary-color:#100d28;
+    --secondary-color:#ff00e2;
+    --tertiary-color:#c484f1;
+}
+.navbar {
+    background-color: var(--primary-color);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+  }
+  .nav-link {
+    color: var(--tertiary-color);
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+    margin: 0 20px;
+  }
+  .nav-link:hover {
+    color: var(--secondary-color);
+  }
+  .navbar-toggler {
+    background-color: #c484f1;
+  }
+
+  .navbar-brand img {
+    width: 80px;
+  }
+  .nav-link.activ {
+    color: var(--secondary-color);
+  }
+  nav ul li .activ {
+    color: #e6007f;
+  }
