@@ -152,7 +152,7 @@ function generateTeamMembers() {
   const teamGrid = document.querySelector('.team-grid');
   const roles = [
     { name: 'John Smith', role: 'CEO', bio: '15+ years of experience in IT leadership and strategic planning. Led multiple Fortune 500 digital transformations.' },
-    { name: 'Sarah Johnson', role: 'Production Manager', bio: 'Former Google engineer with expertise in AI and cloud architecture. Patents holder in distributed systems.' },
+    { name: 'Sarah Johnson', role: 'CTO', bio: 'Former Google engineer with expertise in AI and cloud architecture. Patents holder in distributed systems.' },
     { name: 'Michael Chen', role: 'Solutions Architect', bio: 'Specialized in enterprise architecture and cloud migration. AWS certified professional.' },
     { name: 'Emma Davis', role: 'Security Expert', bio: 'CISSP certified with focus on cybersecurity and compliance. Former NSA consultant.' },
     { name: 'Alex Rodriguez', role: 'Lead Developer', bio: '10+ years in full-stack development. Created numerous successful enterprise applications.' },
