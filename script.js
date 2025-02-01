@@ -272,7 +272,7 @@ const testimonials = [
   },
   {
     name: "Raza abbas",
-    role: "Frontend Developer",
+    role: "DevOps Engineer",
     image: "media/t2.jpg",
     quote: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a eius excepturi molestias commodi aliquam error magnam consectetur laboriosam numquam, minima eveniet nostrum sequi saepe ipsam non ea, inventore tenetur! Corporis commodi consequatur molestiae voluptatum!",
     socials: [
