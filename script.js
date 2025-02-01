@@ -257,3 +257,87 @@ document.addEventListener('DOMContentLoaded', () => {
   generateTeamMembers();
   initAnimations();
 });
+
+const testimonials = [
+  {
+    name: "Abdul Majid",
+    role: "MERN Stack Developer",
+    image: "media/t1.jpg",
+    quote: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a eius excepturi molestias commodi aliquam error magnam consectetur laboriosam numquam, minima eveniet nostrum sequi saepe ipsam non ea, inventore tenetur! Corporis commodi consequatur molestiae voluptatum!",
+    socials: [
+      { icon: "fa-brands fa-twitter", link: "#" },
+      { icon: "fa-brands fa-facebook", link: "#" },
+      { icon: "fa-brands fa-linkedin", link: "#" },
+    ],
+  },
+  {
+    name: "Raza abbas",
+    role: "Frontend Developer",
+    image: "media/t2.jpg",
+    quote: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a eius excepturi molestias commodi aliquam error magnam consectetur laboriosam numquam, minima eveniet nostrum sequi saepe ipsam non ea, inventore tenetur! Corporis commodi consequatur molestiae voluptatum!",
+    socials: [
+      { icon: "fa-brands fa-twitter", link: "#" },
+      { icon: "fa-brands fa-facebook", link: "#" },
+      { icon: "fa-brands fa-linkedin", link: "#" },
+    ],
+  },
+  {
+    name: "Hassan Ali",
+    role: "UI/UX Designer",
+    image: "media/t3.jpg",
+    quote: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a eius excepturi molestias commodi aliquam error magnam consectetur laboriosam numquam, minima eveniet nostrum sequi saepe ipsam non ea, inventore tenetur! Corporis commodi consequatur molestiae voluptatum!",
+    socials: [
+      { icon: "fa-brands fa-twitter", link: "#" },
+      { icon: "fa-brands fa-facebook", link: "#" },
+      { icon: "fa-brands fa-linkedin", link: "#" },
+    ],
+  },
+];
+
+function generateCarouselItems() {
+  const carouselInner = document.querySelector(".carousel-inner");
+
+  testimonials.forEach((testimonial, index) => {
+    const carouselItem = document.createElement("div");
+    carouselItem.classList.add("carousel-item");
+    if (index === 0) carouselItem.classList.add("active"); 
+
+    const singleItem = `
+      <div class="single-item">
+        <div class="row">
+          <div class="col-md-5">
+            <div class="profile">
+              <div class="img-area">
+                <img src="${testimonial.image}" alt="${testimonial.name}">
+              </div>
+              <div class="bio">
+                <h2>${testimonial.name}</h2>
+                <h4>${testimonial.role}</h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="content">
+              <p><span><i class="fa fa-quote-left"></i></span>${testimonial.quote}</p>
+              <p class="socials">
+                ${testimonial.socials
+                  .map(
+                    (social) =>
+                      `<a href="${social.link}" target="_blank"><i class="${social.icon}"></i></a>`
+                  )
+                  .join(" ")}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+
+    carouselItem.innerHTML = singleItem;
+
+    carouselInner.appendChild(carouselItem);
+  });
+}
+
+generateCarouselItems();
+ 
