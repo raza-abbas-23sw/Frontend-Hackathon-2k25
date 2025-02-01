@@ -96,6 +96,7 @@ gsap.to('.footer .waves .wave1', {
     duration: 4,
     repeat: -1,
     ease: "linear",
+    x:200
 });
 gsap.to('.footer .waves .wave2',{
     backgroundPositionX: "-1000px", 
