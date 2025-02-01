@@ -145,6 +145,64 @@ function initAnimations() {
       ease: "power3.out"
     });
   });
+
+  // Enhanced 3D effect for service cards
+  const serviceCards = document.querySelectorAll('.service-card');
+  
+  serviceCards.forEach((card, index) => {
+    // Initial animation
+    gsap.from(card, {
+      scrollTrigger: {
+        trigger: card,
+        start: "top 80%",
+        toggleActions: "play none none reverse"
+      },
+      y: 50,
+      opacity: 0,
+      duration: 0.8,
+      delay: index * 0.2,
+      ease: "power3.out"
+    });
+
+    // Mouse move 3D effect
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      
+      const rotateX = (y - centerY) / 20;
+      const rotateY = (centerX - x) / 20;
+
+      card.classList.add('moving');
+      card.style.transform = `
+        perspective(1000px) 
+        rotateX(${rotateX}deg) 
+        rotateY(${rotateY}deg)
+        translateZ(20px)
+      `;
+    });
+
+    // Reset on mouse leave
+    card.addEventListener('mouseleave', () => {
+      card.classList.remove('moving');
+      card.style.transform = 'perspective(1000px)';
+    });
+  });
+
+  // Services background parallax effect
+  gsap.to(".services", {
+    scrollTrigger: {
+      trigger: ".services",
+      start: "top bottom",
+      end: "bottom top",
+      scrub: 1
+    },
+    backgroundPosition: "50% 100%",
+    ease: "none"
+  });
 }
 
 // Generate team members
@@ -152,7 +210,7 @@ function generateTeamMembers() {
   const teamGrid = document.querySelector('.team-grid');
   const roles = [
     { name: 'John Smith', role: 'CEO', bio: '15+ years of experience in IT leadership and strategic planning. Led multiple Fortune 500 digital transformations.' },
-    { name: 'Sarah Johnson', role: 'CTO', bio: 'Former Google engineer with expertise in AI and cloud architecture. Patents holder in distributed systems.' },
+    { name: 'Sarah Johnson', role: 'Production Manager', bio: 'Former Google engineer with expertise in AI and cloud architecture. Patents holder in distributed systems.' },
     { name: 'Michael Chen', role: 'Solutions Architect', bio: 'Specialized in enterprise architecture and cloud migration. AWS certified professional.' },
     { name: 'Emma Davis', role: 'Security Expert', bio: 'CISSP certified with focus on cybersecurity and compliance. Former NSA consultant.' },
     { name: 'Alex Rodriguez', role: 'Lead Developer', bio: '10+ years in full-stack development. Created numerous successful enterprise applications.' },
