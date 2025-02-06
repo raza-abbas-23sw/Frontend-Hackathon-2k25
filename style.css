@@ -527,7 +527,7 @@ line-height: 1.6;
   }
 }
 
-.contact .container,.contact .mb-3,.contact{
+.contact .container,.contact .col-md-8{
   z-index: 2;
 }
 .footer .waves >div{
