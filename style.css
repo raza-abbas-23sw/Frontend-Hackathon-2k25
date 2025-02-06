@@ -86,22 +86,26 @@ nav ul li .activ {
     box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
   }
   
+  .cta-button a{
+text-decoration: none;
+color: white;
+  }
   .cta-button:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
   }
   
   .particles {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     pointer-events: none;
   }
-  
   .particle {
     position: absolute;
+    z-index: -1;
     background:var(--tertiary-color);
     border-radius: 50%;
     opacity: 0;
@@ -113,15 +117,14 @@ nav ul li .activ {
   align-items: center;
   padding: 6rem 10%;
   gap: 4rem;
-  background: var(--primary-color);
   position: relative;
-  z-index: 10; /* Ensure it's above particles */
 }
 
 .about-content {
   flex: 1;
   color: #94a3b8;
 gap: 2rem;
+z-index: 2;
 font-size: 1.5rem;
   opacity: 1;
   transform: translateX(0); 
@@ -136,6 +139,7 @@ font-size: 1.5rem;
 
 .about-image {
   flex: 1;
+  z-index: 2;
   opacity: 1;
   transform: translateX(0); /* Reset transform */
 }
@@ -144,6 +148,8 @@ font-size: 1.5rem;
   width: 100%;
   border-radius: 20px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  z-index: 10; /* Ensure it's above particles */
+
 }
 .stats {
 display: flex;
@@ -171,12 +177,15 @@ font-size: 1rem;
 .team {
 padding: 6rem 10%;
 background: var(--primary-color);
+z-index: 10; /* Ensure it's above particles */
+
 }
 
 .team h2 {
 text-align: center;
 font-size: 2.5rem;
 margin-bottom: 4rem;
+z-index: 2;
 background: linear-gradient(45deg, var(--primary-color), var(--tertiary-color));
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
@@ -191,6 +200,7 @@ perspective: 1000px;
 
 .team-card {
 height: 400px;
+z-index: 2;
 perspective: 1000px;
 cursor: pointer;
 }
@@ -311,12 +321,11 @@ line-height: 1.6;
 /* Services Section */
 .services {
   padding: 8rem 10%;
-  background: var(--primary-color);
   position: relative;
   overflow: hidden;
+  
   perspective: 1000px;
 }
-
 .services h2, .contact-heading, .testi-heading {
   text-align: center;
   font-size: 2.5rem;
@@ -340,7 +349,6 @@ line-height: 1.6;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
   position: relative;
-  z-index: 1;
   transform-style: preserve-3d;
 }
 
@@ -348,6 +356,8 @@ line-height: 1.6;
   background: linear-gradient(45deg, var(--primary-color), var(--tertiary-color));
   border-radius: 20px;
   padding: 2rem;
+  z-index: 2;
+
   position: relative;
   overflow: hidden;
   backdrop-filter: blur(10px);
@@ -490,7 +500,37 @@ line-height: 1.6;
 .service-card.moving {
   transition: transform 0.05s ease;
 }
+@media (max-width: 768px) {
+  .services {
+    margin: 1rem 0;
+    padding: 4rem 5%;
+  }
 
+  .services-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service-card {
+    width: 100%;
+    max-width: 350px; /* Ensures the card remains centered */
+  }
+}
+
+@media (max-width: 480px) {
+  .services {
+    padding: 3rem 3%;
+  }
+
+  .service-card {
+    max-width: 320px;
+  }
+}
+
+.contact .container,.contact .mb-3,.contact{
+  z-index: 2;
+}
 .footer .waves >div{
     position: absolute;
     top: -100px;
