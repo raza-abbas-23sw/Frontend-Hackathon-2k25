@@ -503,7 +503,7 @@ line-height: 1.6;
 @media (max-width: 768px) {
   .services {
     margin: 1rem 0;
-    padding: 4rem 5%;
+    /* padding: 4rem 5%; */
   }
 
   .services-grid {
@@ -519,9 +519,8 @@ line-height: 1.6;
 }
 
 @media (max-width: 480px) {
-  .services {
-    padding: 3rem 3%;
-  }
+  /* .services {
+  } */
 
   .service-card {
     max-width: 320px;
